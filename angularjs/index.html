@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sportsStore">
+<head>
+    <meta charset="UTF-8">
+    <title>Sport store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="angular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <script>
+        angular.module("sportsStore", ["customFilters"]);
+    </script>
+    <script src="controllers/sportsStore.js"></script>
+    <script src="filters/customFilters.js"></script>
+    <script src="controllers/productListControllers.js"></script>
+</head>
+<body ng-controller="sportsStoreCtrl">
+
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">SPORTS STORE</a>
+</div>
+<div class="alert alert-danger" ng-show="data.error">
+    Error ({{data.error.status}}). The product data was not loaded.
+    <a href="/app.html" class="alert-link">Click here to try again</a>
+</div>
+<ng-include src="'views/productList.html'"></ng-include>
+
+
+
+
+</body>
+</html>
